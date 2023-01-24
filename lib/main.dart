@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'date_picker_widget.dart';
+import 'locale_utils.dart';
 
 const List<String> LOCALES_STRINGS = [
   'en', // English, no country code
+  'en_GB', // English, UK
   'he', // Hebrew, no country code
   'pl', // Polish, no country code
+  'pl_PL', // Polish with country code
   'be', // Belarusian, no country code
   'zh', // Chinese, no country code
 ];
 
-List<Locale> LOCALES = LOCALES_STRINGS.map((code) => Locale(code)).toList();
+List<Locale> LOCALES = LOCALES_STRINGS.map(getLocale).toList();
 
 void main() => runApp(const MyApp());
 

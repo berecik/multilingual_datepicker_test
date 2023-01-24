@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 
+import 'locale_utils.dart';
+
 class DatePickerWidget extends StatefulWidget {
   final DateTime? value;
   final bool autofocus = false;
@@ -58,7 +60,7 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
     if (widget.locale == null) {
       locale = Localizations.localeOf(context);
     } else {
-      locale = Locale(widget.locale!);
+      locale = getLocale(widget.locale!);
     }
 
     initializeDateFormatting();
