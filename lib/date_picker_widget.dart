@@ -45,6 +45,7 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
   @override
   void initState() {
     super.initState();
+    _value = widget.value;
   }
 
   @override
